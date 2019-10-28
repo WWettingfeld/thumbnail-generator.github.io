@@ -1,0 +1,87 @@
+body {
+	margin: 0px;
+	background-image: url("../img/background.png");
+	background-color: grey;
+	background-repeat: repeat;
+	font-family: 'Century Gothic';
+	font-size: 20px;
+	overflow: auto;
+}
+/*		
+
+	border: 1px dashed lime;
+*/	
+#container {
+	position: absolute;
+	top: 85px;
+	left: 1%;
+	width:96%;
+	height: 75%;
+	padding: 1% 1% 1% 1%;
+	background-color: #fff;
+	box-shadow: 2px 2px 10px #888888;
+}
+/*************** stuff ***************/
+label{
+	text-align: right;
+}
+h2{
+	text-align: center;
+}
+.inputs{
+	padding-bottom: 10;
+}
+.title{
+	position: relative;
+	padding-top: .3em;
+	width: 100%;
+	height: 110;
+	font-size:50;
+	font-weight:bold;
+}
+.resultPay{
+	width: 60;
+	height: 20;
+	text-align: center;
+	border: 1px solid grey;
+}
+.resultPer{
+	width: 40;
+	height: 20;
+	color: grey;
+	text-align: center;
+}
+.event1-span{
+	border-top: 2px solid #BF061E;
+	border-bottom: 2px solid #BF061E;
+	border-left: 2px solid #BF061E;
+}
+.event2-span{
+	border: 2px solid #BF061E;
+}
+.event3-span{
+	border-top: 2px solid #BF061E;
+	border-right: 2px solid #BF061E;
+	border-bottom: 2px solid #BF061E;
+}
+/*************** Other ***************/
+.topleft{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#tlocHeader {
+	position: absolute;
+	width:100%;
+	height:55px;
+	background-color: #000;
+}
+#logo{
+	padding:  0 10;
+	height: 50;
+}
+.wrapper{
+	width: 1000;
+	height: 50;
+	margin: 0 auto;
+}

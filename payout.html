@@ -1,0 +1,279 @@
+<html>
+
+<!-- Mirrored from tloc.irtypo.net/payout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Oct 2019 23:36:00 GMT -->
+<head>
+	<link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/payout.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/payout.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="index-2.html" style="color: transparent;">
+						<img id="logo" src="img/logo.png">​
+					</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="payout.html">Payout Calculator</a></li>
+					<li><a href="thumbgen.html">Thumbnail Generator</a></li>
+				</ul>
+			</div>
+		</nav>
+<div id="container">
+	<div class="title"> Payout Calculator </div>
+	
+	<div class="event1-span col-xs-6">
+		<h2>Singles</h2>
+		<div class="details">
+			<div class="inputs col-sm-12"> 
+				<form id="event1" type="text"> 
+					<div class="form-field">
+						<label class="col-sm-6">Entry Fee:</label>
+						<input type="text" placeholder="5" class="fee col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Number of Entrants:</label>
+						<input type="text" placeholder="40" class="num-entrants col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Payout to top:</label>
+						<input type="text" placeholder="auto" class="num-payouts col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Pot Bonus:</label>
+						<input type="text" placeholder="0" class="bonus col-sm-3">
+					</div>
+				</form>
+			</div>
+			
+				
+			<div class=" col-sm-12">
+				<button type="button" class="calculate-btn col-sm-3">Calculate</button>
+				<label class=" col-sm-3">Total:</label>
+				<div  id="1total" class="resultPay col-sm-2"></div>
+			</div>
+		
+			<div class="calculations col-sm-12">
+				<div class="row">
+					<label class="col-sm-6">1st:</label>
+					<div  id="11Pay" class="resultPay col-sm-2"></div>
+					<div  id="11Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">2nd:</label>
+					<div  id="12Pay" class="resultPay col-sm-2"></div>
+					<div  id="12Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">3rd:</label>
+					<div  id="13Pay" class="resultPay col-sm-2"></div>
+					<div  id="13Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">4th:</label>
+					<div  id="14Pay" class="resultPay col-sm-2"></div>
+					<div  id="14Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">5th:</label>
+					<div  id="15Pay" class="resultPay col-sm-2"></div>
+					<div  id="15Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">5th:</label>
+					<div  id="16Pay" class="resultPay col-sm-2"></div>
+					<div  id="16Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">7th:</label>
+					<div  id="17Pay" class="resultPay col-sm-2"></div>
+					<div  id="17Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">7th:</label>
+					<div  id="18Pay" class="resultPay col-sm-2"></div>
+					<div  id="18Per" class="resultPer col-sm-2"></div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	
+	<div class="event2-span col-xs-6">
+		<h2>Doubles</h2>
+		<div class="details">
+			<div class="inputs col-sm-12"> 
+				<form id="event2" type="text"> 
+					<div class="form-field">
+						<label class="col-sm-6">Entry Fee:</label>
+						<input type="text" placeholder="10" class="fee col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Number of Entrants:</label>
+						<input type="text" placeholder="15" class="num-entrants col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Payout to top:</label>
+						<input type="text" placeholder="auto" class="num-payouts col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Pot Bonus:</label>
+						<input type="text" placeholder="0" class="bonus col-sm-3">
+					</div>
+				</form>
+			</div>
+			
+				
+			<div class=" col-sm-12">
+				<button type="button" class="calculate-btn col-sm-3">Calculate</button>
+				<label class=" col-sm-3">Total:</label>
+				<div  id="2total" class="resultPay col-sm-2"></div>
+			</div>
+		
+			<div class="calculations col-sm-12">
+				<div class="row">
+					<label class="col-sm-4">1st:</label>
+					<div  id="21Pay" class="resultPay col-sm-2"></div>
+					<div  id="21Per" class="resultPer col-sm-2"></div>
+					<div  id="21PayT" class="resultPay col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">2nd:</label>
+					<div  id="22Pay" class="resultPay col-sm-2"></div>
+					<div  id="22Per" class="resultPer col-sm-2"></div>
+					<div  id="22PayT" class="resultPay col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">3rd:</label>
+					<div  id="23Pay" class="resultPay col-sm-2"></div>
+					<div  id="23Per" class="resultPer col-sm-2"></div>
+					<div  id="23PayT" class="resultPay col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">4th:</label>
+					<div  id="24Pay" class="resultPay col-sm-2"></div>
+					<div  id="24Per" class="resultPer col-sm-2"></div>
+					<div  id="24PayT" class="resultPay col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">5th:</label>
+					<div  id="25Pay" class="resultPay col-sm-2"></div>
+					<div  id="25Per" class="resultPer col-sm-2"></div>
+					<div  id="25PayT" class="resultPay col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">5th:</label>
+					<div  id="26Pay" class="resultPay col-sm-2"></div>
+					<div  id="26Per" class="resultPer col-sm-2"></div>
+					<div  id="26PayT" class="resultPay col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">7th:</label>
+					<div  id="27Pay" class="resultPay col-sm-2"></div>
+					<div  id="27Per" class="resultPer col-sm-2"></div>
+					<div  id="27PayT" class="resultPay col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-4">7th:</label>
+					<div  id="28Pay" class="resultPay col-sm-2"></div>
+					<div  id="28Per" class="resultPer col-sm-2"></div>
+					<div  id="28PayT" class="resultPay col-sm-2"></div>
+				</div>
+			</div>	
+		</div>
+	</div>
+<!--
+	<div class="event3-span col-sm-4">
+		<h2>Side</h2>
+		<div class="details">
+			<div class="inputs col-sm-12"> 
+				<form id="event3" type="text"> 
+					<div class="form-field">
+						<label class="col-sm-6">Entry Fee:</label>
+						<input type="text" placeholder="1" class="fee col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Number of Entrants:</label>
+						<input type="text" placeholder="10" class="num-entrants col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Payout to top:</label>
+						<input type="text" placeholder="auto" class="num-payouts col-sm-3">
+					</div>
+
+					<div class="form-field">
+						<label class="col-sm-6">Pot Bonus:</label>
+						<input type="text" placeholder="0" class="bonus col-sm-3">
+					</div>
+				</form>
+			</div>
+			
+				
+			<div class=" col-sm-12">
+				<button type="button" class="calculate-btn col-sm-3">Calculate</button>
+				<label class=" col-sm-3">Total:</label>
+				<div  id="3total" class="resultPay col-sm-2"></div>
+			</div>
+		
+			<div class="calculations col-sm-12">
+				<div class="row">
+					<label class="col-sm-6">1st:</label>
+					<div  id="31Pay" class="resultPay col-sm-2"></div>
+					<div  id="31Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">2nd:</label>
+					<div  id="32Pay" class="resultPay col-sm-2"></div>
+					<div  id="32Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">3rd:</label>
+					<div  id="33Pay" class="resultPay col-sm-2"></div>
+					<div  id="33Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">4th:</label>
+					<div  id="34Pay" class="resultPay col-sm-2"></div>
+					<div  id="34Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">5th:</label>
+					<div  id="35Pay" class="resultPay col-sm-2"></div>
+					<div  id="35Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">5th:</label>
+					<div  id="36Pay" class="resultPay col-sm-2"></div>
+					<div  id="36Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">7th:</label>
+					<div  id="37Pay" class="resultPay col-sm-2"></div>
+					<div  id="37Per" class="resultPer col-sm-2"></div>
+				</div>
+				<div class="row">
+					<label class="col-sm-6">7th:</label>
+					<div  id="38Pay" class="resultPay col-sm-2"></div>
+					<div  id="38Per" class="resultPer col-sm-2"></div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	
+	-->
+	
+</div>
+</body>
+
+<!-- Mirrored from tloc.irtypo.net/payout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Oct 2019 23:36:03 GMT -->
+</html>

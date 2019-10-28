@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<!-- Mirrored from tloc.irtypo.net/thumbgen.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Oct 2019 23:35:02 GMT -->
+<head>
+		<title>Thumbnail Generator</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+		<link rel="stylesheet" href="../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="../ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="js/canvas2image.js"></script>
+		<script type="text/javascript" src="js/html2canvas.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="http://apps.tourneylocator.com/" style="color: transparent;">
+						<img id="logo" src="img/logo.png">​
+					</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="http://apps.tourneylocator.com/TourneyAssistant">Tourney Assistant</a></li>
+					<li><a href="http://apps.tourneylocator.com/PayoutCalculator/">Payout Calculator</a></li>
+					<li class="active"><a href="http://apps.tourneylocator.com/ThumbnailGenerator/">Thumbnail Generator</a></li>
+					<li ><a href="index_legacy.html">Legacy ThumbGen</a></li>
+				</ul>
+			</div>
+		</nav>
+
+
+		<div class="container stage">
+			<div class="row no-gutters">
+				<div id="thumbnail" class="col-lg-7">
+				
+						<img id="background" src="img/noevent.png" class="img-responsive top-left" onerror="src='img/blank.png'"/>
+						
+						<img id="p1Char" class="img-responsive" onerror="src='img/blank.png'"/>
+						<img id="p2Char" class="img-responsive" onerror="src='img/blank.png'"/>
+						
+						<img id="bars" class="img-responsive top-left" onerror="src='img/blank.png'"/>
+						<img id="vs" class="img-responsive top-left" onerror="src='img/blank.png'"/>
+						<img id="foreground" class="img-responsive top-left" onerror="src='img/blank.png'"/>
+						<img id="gameLogo" class="img-responsive top-left" onerror="src='img/blank.png'"/>
+					
+						<div class="row no-gutters">
+							<div class="col-lg-6">
+								<div id="p1Name" class="text name"></div>
+							</div>
+							<div class="col-lg-6">
+								<div id="p2Name"  class="text name"></div>
+							</div>
+						</div>
+
+						<div class="row no-gutters">
+							<div class="col-lg-12 ">
+								<div id="bracket" class="text"></div>
+								<div id="number" class="text"></div>
+							</div>
+						</div>
+				
+				</div>
+				<div class="col-lg-5 ">
+					<textarea class="form-control" rows="18" id="input"></textarea>
+				</div>
+			</div>
+
+			<div class="row no-gutters">
+				<div class="col-lg-7">
+					<div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapse1">one button?!</a>
+								</h4>
+							</div>
+							<div id="collapse1" class="panel-collapse collapse">
+								<div class="panel-body">- Paste colon seperated values (same as before) <br> event : num : p1 : c1 : p2 : c2 : bracket : game</div>
+								<div class="panel-body">- Click Download</div>
+								<div class="panel-body" data-toggle="tooltip" title="if you allow them to" >- A thumbnail will download every 3 seconds</div>
+								<div class="panel-body">- The images will not have a file extension(.png) </div>
+								<div class="panel-body">- You can use <a href="MassFileRenamer.exe">this program </a>to rename them simultaneously</div>
+								<div class="panel-body">	- It works best if you add a ' )' to the <a href="img/howto.png">end of the first download</a></div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5 shift-up">
+					<button type="button" class="btn btn-success btn-sm " id="btn-download">Download</button>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+
+<!-- Mirrored from tloc.irtypo.net/thumbgen.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Oct 2019 23:35:21 GMT -->
+</html>

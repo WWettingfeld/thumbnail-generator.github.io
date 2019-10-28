@@ -1,0 +1,106 @@
+<html>
+
+<!-- Mirrored from tloc.irtypo.net/index_legacy.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Oct 2019 23:35:24 GMT -->
+<head>
+    <link rel="stylesheet" type="text/css" href="css/index_legacy.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/index_legacy.js"></script>
+	
+	<script type="text/javascript" src="js/canvas2image.js"></script>
+	<script type="text/javascript" src="js/html2canvas.js"></script>
+</head>
+<body>
+<header id ="tlocHeader">
+	<a class="logo" href="http://apps.tourneylocator.com/" style="color: transparent;">
+		<img id="logo" src="img/logo.png">​
+     </a>
+</header>
+<div id="container">
+	<div id="thumb" class="lhs">
+		<img id="background" src="img/noevent.png" onerror="src='img/blank.png'"/>
+		
+		<img id="p1Char" class="" onerror="src='img/blank.png'"/>
+		<img id="t1Char" class="" onerror="src='img/blank.png'"/>
+		
+		<img id="p2Char" class="" onerror="src='img/blank.png'"/>
+		<img id="t2Char" class="" onerror="src='img/blank.png'"/>
+		
+		<img id="bars"  onerror="src='img/blank.png'"/>
+		<img id="vs"  onerror="src='img/blank.png'"/>
+		<img id="game"  onerror="src='img/blank.png'"/>
+	
+		<span class="lhsTop">
+			<span id="p1Name"  class="name"></span>
+			<span id="t1Name"  class="name"></span>
+			<span id="p2Name"  class="name"></span>
+			<span id="t2Name"  class="name"></span>
+		</span>
+		<span class="lhsBot">
+			<span id="bracket" ></span>
+			<span id="number" ></span>
+		</span>
+	</div>
+	
+	<div class="rhs">
+		
+		
+		<ul class="tab">
+		  <li><a href="#" class="tablinks" onclick="tabSelection(event, 'individual');inputType=1">Individual</a></li>
+		  <li><a href="#" class="tablinks " onclick="tabSelection(event, 'string');inputType=2">String</a></li>
+		  <li><a href="#" class="tablinks active" onclick="tabSelection(event, 'batch');inputType=3">Batch</a></li>
+		</ul>
+		
+		<div id="individual" class="tabcontent">
+			<form id="Form_Individual" onsubmit="generate()">
+				<fieldset><legend></legend>
+					<input type="text" list="event-list" name="eventName" size="10"> Event Name<BR>
+					<input type="text" name="eventNumber" size="10"> Event Number<BR>
+					<input type="text" list="bracket-list" name="bracket" size="10"> Bracket<BR>
+				</fieldset>
+				<fieldset>	<legend>Team 1</legend>
+					<input type="text" list="player-list" name="pName1" size="10"> P1 Name<BR>
+					<input type="text" list="player-list" name="tName1" size="10"> T1 Name<BR>
+					
+					<input type="text" list="char-list" name="pChar1" size="10"> P1 Char<BR>
+					<input type="text" list="char-list" name="tChar1" size="10"> T1 Char<BR>
+				</fieldset>
+				
+				<fieldset>	<legend>Team 2</legend>
+					<input type="text" list="player-list" name="pName2" size="10"> P2 Name<BR>
+					<input type="text" list="player-list" name="tName2" size="10"> T2 Name <BR>
+	
+					<input type="text" list="char-list" name="pChar2" size="10"> P2 Char<BR>
+					<input type="text" list="char-list" name="tChar2" size="10"> T2 Char<BR>
+				</fieldset>
+			</form>
+		</div>
+		
+		<div id="string" class="tabcontent">	
+			<form id="Form_String" onsubmit="generate()"> Singles<BR>
+				<input type="text" name="concatenationS" size="50"> Doubles<BR>
+				<input type="text" name="concatenationD" size="50"><BR>
+			</form>
+		</div>	
+			
+		<div id="batch" class="tabcontent">	
+			<form id="Form_Batch" onsubmit="generate()"> Batch<BR>
+				<textarea id="batch_input" name="batch_input" rows="30" cols="55"></textarea>
+			</form>
+		</div>
+		
+		<span class="buttons">
+			<a id="new version" href="index.html" >!</a>
+			<button onclick="generate()">Generate</button>
+			<button onclick="batchSort()">Next</button>
+			<a id="download-link" target="_blank" download="asdf.png">download</a>
+		</span>	
+	</div>
+</div>
+	<datalist id="char-list">		</datalist>
+	<datalist id="event-list">	</datalist>
+	<datalist id="bracket-list">	</datalist>
+	<datalist id="player-list">	</datalist>
+</body>
+
+<!-- Mirrored from tloc.irtypo.net/index_legacy.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Oct 2019 23:35:28 GMT -->
+</html>
