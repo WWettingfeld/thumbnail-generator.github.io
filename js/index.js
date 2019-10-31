@@ -34,16 +34,17 @@ $(document).ready(function() {
 // MNM		:209	:hamyojo:Sheik	:Arsenals	:Fox	:Winners	:Melee
 // event	:num	:p1		:c1		:p2			:c2		:bracket	:game
 // 0		:1		:2		:3		:4			:5		:6			:7		
-function fillArrays(){
-	var matchInfo=[];
-	var token=[];
+function fillArrays() {
+	var matchInfo = [];
+	var token = [];
 	var input = $("#input").val();
 	
 	matchInfo = input.split('\n');
 
-	for(i=0;i < matchInfo.length;i++){
-		for (j=0;j < 8;j++){
-			token = matchInfo[i].split(':');}
+	for(i = 0; i < matchInfo.length; i++) {
+		for (j = 0; j < 8; j++) {
+			token = matchInfo[i].split(':');
+		}
 
 		tokens[i] = token;
 	}
@@ -83,8 +84,6 @@ function fillHTML(t){
 	$("#foreground").attr("src", "img/event/" + t[0] + "/foreground.png");
 	$("#gameLogo").attr("src", "img/game/" + t[7] + ".png");
 	$("#number").html(t[1]);
-	
-
 
 	switch(t[7].toLowerCase()){
 		case "tekken 7":
@@ -192,13 +191,9 @@ function fillHTML(t){
 			break;
 	}
 
-
-		
-	
 	$("#p1Name").html(t[2]);
 	$("#p2Name").html(t[4]);
 	$("#bracket").html(t[6]);
-
 
 	switch(t[7].toLowerCase()){
 		case "ssbu":
