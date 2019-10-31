@@ -36,16 +36,22 @@ img{ position: absolute; }
 	max-width: 45%
 }
 .border-lime{ border: 1px dashed lime; }
+
 .name{
-	top: 10px;
+	top: 2px;
 }
+
 .text{
 	position: relative;
 	color: #fff;
 	font-style: bold;	
 }
-#p2Name{ text-align: right; }
-#p1Char{
+
+#p2Name { 
+	text-align: right; 
+}
+
+#p1Char {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -56,11 +62,17 @@ img{ position: absolute; }
 	right: 0px;
 	transform: scaleX(-1);
 }
-#bracket{
+
+#bracket {
 	position: absolute;
-	top: 275px;
-	left: 5px;
+    top: 219px;
+    left: 50%;
+    font-size: 21px;
+    margin-left: -150px;
+    width: 300px;
+    text-align: center;
 }
+
 #number{
 	position: absolute;
 	top: 275px;

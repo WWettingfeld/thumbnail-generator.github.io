@@ -61,7 +61,7 @@ function determineCCS(event){
 		case "xdl":
 		case "fxl":
 		case "fxi":
-		case "usw":
+		//case "usw":
 		case "nfa":
 		case "sbw":
 		case "rushdown":
@@ -146,7 +146,7 @@ function fillHTML(t){
 			break;
 		case "usw":
 		case "ultimatum":
-			$("#bracket").css("top", "216px");
+			//$("#bracket").css("top", "216px");
 			$(".text").css("color", "#fff");
 			$("#gameLogo").show();
 			break;
