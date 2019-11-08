@@ -8,7 +8,10 @@ body {
 	overflow: auto;
 	color: #fff;
 }
-img{ position: absolute; }
+
+img { 
+	position: absolute; 
+}
 
 .stage {
 	background-color: #fff;
@@ -16,10 +19,12 @@ img{ position: absolute; }
 	padding: 6px 3px 0px 3px;
 	font-size: 35px;
 }
+
 .row.no-gutters {
   margin-right: 0;
   margin-left: 0;
 }
+
 .row.no-gutters > [class^="col-"],
 .row.no-gutters > [class*=" col-"] {
   padding-right: 3px;
@@ -27,21 +32,25 @@ img{ position: absolute; }
   padding-bottom: 3px;
 }
 
-#input{
+#input {
 	resize: none;
 }
-#logo{
+
+#logo {
 	position: relative;
 	padding: 7px 0px 7px 0px;
 	max-width: 45%
 }
-.border-lime{ border: 1px dashed lime; }
 
-.name{
+.border-lime { 
+	border: 1px dashed lime; 
+}
+
+.name {
 	top: 2px;
 }
 
-.text{
+.text {
 	position: relative;
 	color: #fff;
 	font-style: bold;	
@@ -56,7 +65,8 @@ img{ position: absolute; }
 	top: 0px;
 	left: 0px;
 }
-#p2Char{
+
+#p2Char {
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -73,40 +83,37 @@ img{ position: absolute; }
     text-align: center;
 }
 
-#number{
+#number {
 	position: absolute;
 	top: 275px;
 	right: 5px;
 }
-#game{
+
+#game {
 	position: absolute;
 	opacity: 0;
 }
-.top-left{
+
+.top-left {
 	position: absolute;
 	top: 0px;
 	left: 0px;
 }
 
-.text-top{
-	position: relative;
-	height: 200px;
-}
-.text-bot{
-	position: absolute;
-	bottom: 0%;
-}
-button{
+button {
 	position: relative;
 }
-#thumbnail{
+
+#thumbnail {
 	position: relative;
 	height: 383px;
 }
-.panel-body{
+
+.panel-body {
 	color: #000;
 	font-size: 15px;
 }
-.shift-up{
+
+.shift-up {
 	margin-top: -8px;
 }

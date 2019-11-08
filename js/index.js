@@ -1,28 +1,17 @@
-/**
-* Author: typo
-* Date: DEC2018
-* Name: Thumbnail Generator
-* Version: 3.0
-**/
-
-var tokens=[];
+var tokens = [];
 
 $(document).ready(function() {
-	// $('[data-toggle="tooltip"]').tooltip(); 
 	$("#thumbnail").css("font-family", "Tahoma");
-
 	
 	$(document).on("click", "#btn-download", function(){
 		fillArrays();
-		determineCCS(tokens[0]);
+		determineCss();
 		fillHTML(tokens[0]);
 		
-		console.log("l: "+tokens.length);
-		var i=0;
-		var flag = setInterval(function(){
-			if (tokens[i]){
+		var i = 0;
+		setInterval(function() {
+			if (tokens[i]) {
 				fillHTML(tokens[i]);
-				console.log(i+": "+tokens[i]);
 				renderAndSave();
 				i++;
 			}		
@@ -49,43 +38,59 @@ function fillArrays() {
 		tokens[i] = token;
 	}
 }
-function determineCCS(event){
-	switch(event[0].toLowerCase()){
-		case "ds":
-		case "ds!":
-		case "ltc6":
-		case "hitstun":
-		case "rr":
-			$('link[href="css/index.css"]').attr('href','css/index_upper.css');
-			break;
-		case "xdl":
-		case "fxl":
-		case "fxi":
-		//case "usw":
-		case "nfa":
-		case "sbw":
-		case "rushdown":
-		case "ultimatum":
-		case "ltc7":
-		case "ltc":
-		case "akon":
-			$('link[href="css/index.css"]').attr('href','css/index_lower.css');
-			break;
-		default:
-			$('link[href="css/index.css"]').attr('href','css/index.css');
-			break;
-	}
+
+function determineCss() {
+	$('link[href="css/index.css"]').attr('href','css/index.css');
 }
 
-function fillHTML(t){
-	var game;
-
+function fillHTML(t) {
 	$("#background").attr("src", "img/event/" + t[0] + "/background.png");
 	$("#foreground").attr("src", "img/event/" + t[0] + "/foreground.png");
 	$("#gameLogo").attr("src", "img/game/" + t[7] + ".png");
 	$("#number").html(t[1]);
 
+	var game = setGameCss(t);
+	setEventCss(t);
+
+	$("#p1Name").html(t[2]);
+	$("#p2Name").html(t[4]);
+	$("#bracket").html(t[6]);
+
 	switch(t[7].toLowerCase()){
+		case "ssbu":
+		case "samurai":
+		case "samuraishowdown":
+		case "samuraishow down":
+		case "sfv":
+		case "tekken":
+		case "tekken7":
+		case "tekken 7":
+			$("#p1Char").attr("src", "img/chars/" + game + "/p1/" + t[3] + ".png");
+			$("#p2Char").attr("src", "img/chars/" + game + "/p2/" + t[5] + ".png");
+			break;
+		default:
+			$("#p1Char").attr("src", "img/chars/" + game +  "/" + t[3] + ".png");
+			$("#p2Char").css("transform", "scaleX(-1)");
+			$("#p2Char").attr("src", "img/chars/" + game +  "/" + t[5] + ".png");
+			break;
+	}
+
+	if (t[7].toLowerCase() == "ssbu") {
+		$("#p1Char").attr("src", "img/chars/" + game + "/p1/" + t[3] + ".png");
+		$("#p2Char").css("transform", "scaleX(1)");
+		$("#p2Char").attr("src", "img/chars/" + game + "/p2/" + t[5] + ".png");
+	} 
+	else {
+		$("#p1Char").attr("src", "img/chars/" + game +  "/" + t[3] + ".png");
+		$("#p2Char").css("transform", "scaleX(-1)");
+		$("#p2Char").attr("src", "img/chars/" + game +  "/" + t[5] + ".png");
+	}
+}
+
+function setGameCss(t) {
+	var game;
+
+	switch(t[7].toLowerCase()) {
 		case "tekken 7":
 		case "tekken7":
 		case "tekken":
@@ -126,7 +131,10 @@ function fillHTML(t){
 			break;
 	}
 
+	return game;
+}
 
+function setEventCss(t) {
 	switch(t[0].toLowerCase()){
 		case "mnm":
 		case "sw":
@@ -137,7 +145,14 @@ function fillHTML(t){
 		case "fmirl":
 		case "irl":
 		case "tgtbtm":
-			$("#gameLogo").attr("src", "img/game/elevated/" + t[7] + ".png");
+			$("#bracket").css({
+				"top": "271px",
+			    "left": "5px",
+    			"font-size": "30px",
+    			"text-align": "left",
+    			"margin-left": "0"
+			});
+			$("#gameLogo").attr("src", "img/game/" + t[7] + ".png");
 			break;
 		case "xdl":
 			$("#bracket").css("top", "218px");
@@ -190,40 +205,6 @@ function fillHTML(t){
 			$("#gameLogo").show();
 			break;
 	}
-
-	$("#p1Name").html(t[2]);
-	$("#p2Name").html(t[4]);
-	$("#bracket").html(t[6]);
-
-	switch(t[7].toLowerCase()){
-		case "ssbu":
-		case "samurai":
-		case "samuraishowdown":
-		case "samuraishow down":
-		case "sfv":
-		case "tekken":
-		case "tekken7":
-		case "tekken 7":
-			$("#p1Char").attr("src", "img/chars/" + game + "/p1/" + t[3] + ".png");
-			$("#p2Char").attr("src", "img/chars/" + game + "/p2/" + t[5] + ".png");
-			break;
-		default:
-			$("#p1Char").attr("src", "img/chars/" + game +  "/" + t[3] + ".png");
-			$("#p2Char").css("transform", "scaleX(-1)");
-			$("#p2Char").attr("src", "img/chars/" + game +  "/" + t[5] + ".png");
-			break;
-	}
-
-	if (t[7].toLowerCase() == "ssbu"){
-		$("#p1Char").attr("src", "img/chars/" + game + "/p1/" + t[3] + ".png");
-		$("#p2Char").css("transform", "scaleX(1)");
-		$("#p2Char").attr("src", "img/chars/" + game + "/p2/" + t[5] + ".png");
-	} else {
-		$("#p1Char").attr("src", "img/chars/" + game +  "/" + t[3] + ".png");
-		$("#p2Char").css("transform", "scaleX(-1)");
-		$("#p2Char").attr("src", "img/chars/" + game +  "/" + t[5] + ".png");
-	}
-	
 }
 
 function renderAndSave() {
