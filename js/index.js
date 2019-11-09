@@ -206,6 +206,17 @@ function setEventCss(match) {
 			$("#number").hide();
 			$("#gameLogo").attr("src", "img/game/ssbu_black.png");
 			break;
+		case "si":
+			$(".text").css("color", "#000");
+			$("#bracket").css({
+				"top": "271px",
+			    "left": "5px",
+    			"font-size": "30px",
+    			"text-align": "left",
+    			"margin-left": "0"
+			});
+			$("#number").hide();
+			break;
 		default:
 			$("#number").show();
 			$("#gameLogo").show();
