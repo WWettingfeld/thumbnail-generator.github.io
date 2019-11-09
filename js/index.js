@@ -181,7 +181,7 @@ function setEventCss(match) {
 		case "rushdown":
 			$("#bracket").css("top", "216px");
 			$(".text").css("color", "#000");
-			$("#gameLogo").attr("src", "img/game/SSBU_black.png");
+			$("#gameLogo").attr("src", "img/game/ssbu_black.png");
 			$("#gameLogo").show();
 			break;
 		case "fxi":
@@ -199,11 +199,12 @@ function setEventCss(match) {
 			$("#gameLogo").show();
 		case "rr":
 			$(".text").css("color", "#000");
-			$("#bracket").css("font-size", "18px");
-			$("#bracket").css("top", "17px");
+			$("#bracket").css({
+				"top": "17px",
+				"font-size": "18px"
+			});
 			$("#number").hide();
-			$("#gameLogo").attr("src", "img/game/SSBU_black.png");
-			$("gameLogo").hide();
+			$("#gameLogo").attr("src", "img/game/ssbu_black.png");
 			break;
 		default:
 			$("#number").show();
