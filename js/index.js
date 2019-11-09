@@ -26,7 +26,7 @@ function getMatches() {
 			event: splitMatch[0],
 			number: splitMatch[1],
 			player1: splitMatch[2],
-			char1: splitmatch.char1,
+			char1: splitMatch[3],
 			player2: splitMatch[4],
 			char2: splitMatch[5],
 			bracket: splitMatch[6],
@@ -127,6 +127,9 @@ function setGameLogo(match) {
 		case "pplus":
 			$("#gameLogo").attr("src", "img/game/P+.png");
 			break;
+		default:
+			$("#gameLogo").attr("src", "img/game/" + match.game + ".png");
+			break;
 	}
 }
 
@@ -137,9 +140,6 @@ function setEventCss(match) {
 		case "iab":
 		case "iab!":
 		case "dime":
-		case "kitx":
-		case "fmirl":
-		case "irl":
 		case "tgtbtm":
 			$("#bracket").css({
 				"top": "271px",
@@ -148,7 +148,17 @@ function setEventCss(match) {
     			"text-align": "left",
     			"margin-left": "0"
 			});
-			$("#gameLogo").attr("src", "img/game/" + match.game + ".png");
+			break;
+		case "kitx":
+		case "fmirl":
+		case "irl":
+			$("#bracket").css({
+				"top": "271px",
+				"left": "50%",
+				"font-size": "30px",
+				"text-align": "center",
+				"margin-left": "-150px"
+			});
 			break;
 		case "xdl":
 			$("#bracket").css("top", "218px");
