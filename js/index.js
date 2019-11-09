@@ -1,17 +1,16 @@
-var tokens = [];
+var matches = [];
 
 $(document).ready(function() {
 	$("#thumbnail").css("font-family", "Tahoma");
 	
-	$(document).on("click", "#btn-download", function(){
-		fillArrays();
+	$(document).on("click", "#btn-download", function() {
+		parseInput();
 		determineCss();
-		fillHTML(tokens[0]);
 		
 		var i = 0;
 		setInterval(function() {
-			if (tokens[i]) {
-				fillHTML(tokens[i]);
+			if (matches[i]) {
+				injectMatchInfo(matches[i]);
 				renderAndSave();
 				i++;
 			}		
@@ -23,19 +22,26 @@ $(document).ready(function() {
 // MNM		:209	:hamyojo:Sheik	:Arsenals	:Fox	:Winners	:Melee
 // event	:num	:p1		:c1		:p2			:c2		:bracket	:game
 // 0		:1		:2		:3		:4			:5		:6			:7		
-function fillArrays() {
-	var matchInfo = [];
-	var token = [];
-	var input = $("#input").val();
+function parseInput() {
+	matches = [];
 	
-	matchInfo = input.split('\n');
+	var input = $("#input").val();
+	var	splitMatches = input.split('\n');
 
-	for(i = 0; i < matchInfo.length; i++) {
-		for (j = 0; j < 8; j++) {
-			token = matchInfo[i].split(':');
-		}
+	for (i = 0; i < splitMatches.length; i++) {
+		var splitMatch = splitMatches[i].split(':');
+		var match = {
+			event: splitMatch[0],
+			number: splitMatch[1],
+			player1: splitMatch[2],
+			char1: splitMatch[3],
+			player2: splitMatch[4],
+			char2: splitMatch[5],
+			bracket: splitMatch[6],
+			game: splitMatch[7]
+		};
 
-		tokens[i] = token;
+		matches.push(match);
 	}
 }
 
@@ -43,20 +49,29 @@ function determineCss() {
 	$('link[href="css/index.css"]').attr('href','css/index.css');
 }
 
-function fillHTML(t) {
-	$("#background").attr("src", "img/event/" + t[0] + "/background.png");
-	$("#foreground").attr("src", "img/event/" + t[0] + "/foreground.png");
-	$("#gameLogo").attr("src", "img/game/" + t[7] + ".png");
-	$("#number").html(t[1]);
+function injectMatchInfo(match) {
+	setFoundationImages(match);
+	var game = setGameLogo(match);
+	setEventCss(match);
+	setText(match);
+	setCharacterPortraits(match, game);
+}
 
-	var game = setGameCss(t);
-	setEventCss(t);
+function setFoundationImages(match) {
+	$("#background").attr("src", "img/event/" + match[0] + "/background.png");
+	$("#foreground").attr("src", "img/event/" + match[0] + "/foreground.png");
+	$("#gameLogo").attr("src", "img/game/" + match[7] + ".png");
+}
 
-	$("#p1Name").html(t[2]);
-	$("#p2Name").html(t[4]);
-	$("#bracket").html(t[6]);
+function setText(match) {
+	$("#number").html(match[1]);
+	$("#p1Name").html(match[2]);
+	$("#p2Name").html(match[4]);
+	$("#bracket").html(match[6]);
+}
 
-	switch(t[7].toLowerCase()){
+function setCharacterPortraits(match, game) {
+	switch(match[7].toLowerCase()){
 		case "ssbu":
 		case "samurai":
 		case "samuraishowdown":
@@ -65,32 +80,32 @@ function fillHTML(t) {
 		case "tekken":
 		case "tekken7":
 		case "tekken 7":
-			$("#p1Char").attr("src", "img/chars/" + game + "/p1/" + t[3] + ".png");
-			$("#p2Char").attr("src", "img/chars/" + game + "/p2/" + t[5] + ".png");
+			$("#p1Char").attr("src", "img/chars/" + game + "/p1/" + match[3] + ".png");
+			$("#p2Char").attr("src", "img/chars/" + game + "/p2/" + match[5] + ".png");
 			break;
 		default:
-			$("#p1Char").attr("src", "img/chars/" + game +  "/" + t[3] + ".png");
+			$("#p1Char").attr("src", "img/chars/" + game +  "/" + match[3] + ".png");
 			$("#p2Char").css("transform", "scaleX(-1)");
-			$("#p2Char").attr("src", "img/chars/" + game +  "/" + t[5] + ".png");
+			$("#p2Char").attr("src", "img/chars/" + game +  "/" + match[5] + ".png");
 			break;
 	}
 
-	if (t[7].toLowerCase() == "ssbu") {
-		$("#p1Char").attr("src", "img/chars/" + game + "/p1/" + t[3] + ".png");
+	if (match[7].toLowerCase() == "ssbu") {
+		$("#p1Char").attr("src", "img/chars/" + game + "/p1/" + match[3] + ".png");
 		$("#p2Char").css("transform", "scaleX(1)");
-		$("#p2Char").attr("src", "img/chars/" + game + "/p2/" + t[5] + ".png");
+		$("#p2Char").attr("src", "img/chars/" + game + "/p2/" + match[5] + ".png");
 	} 
 	else {
-		$("#p1Char").attr("src", "img/chars/" + game +  "/" + t[3] + ".png");
+		$("#p1Char").attr("src", "img/chars/" + game +  "/" + match[3] + ".png");
 		$("#p2Char").css("transform", "scaleX(-1)");
-		$("#p2Char").attr("src", "img/chars/" + game +  "/" + t[5] + ".png");
+		$("#p2Char").attr("src", "img/chars/" + game +  "/" + match[5] + ".png");
 	}
 }
 
-function setGameCss(t) {
+function setGameLogo(match) {
 	var game;
 
-	switch(t[7].toLowerCase()) {
+	switch(match[7].toLowerCase()) {
 		case "tekken 7":
 		case "tekken7":
 		case "tekken":
@@ -127,15 +142,15 @@ function setGameCss(t) {
 			$("#gameLogo").attr("src", "img/game/P+.png");
 			break;
 		default:
-			game = t[7];
+			game = match[7];
 			break;
 	}
 
 	return game;
 }
 
-function setEventCss(t) {
-	switch(t[0].toLowerCase()){
+function setEventCss(match) {
+	switch(match[0].toLowerCase()){
 		case "mnm":
 		case "sw":
 		case "iab":
@@ -152,7 +167,7 @@ function setEventCss(t) {
     			"text-align": "left",
     			"margin-left": "0"
 			});
-			$("#gameLogo").attr("src", "img/game/" + t[7] + ".png");
+			$("#gameLogo").attr("src", "img/game/" + match[7] + ".png");
 			break;
 		case "xdl":
 			$("#bracket").css("top", "218px");
@@ -190,7 +205,6 @@ function setEventCss(t) {
 		case "ltc7":
 		case "ltc":
 			$(".text").css("font-style", "bold");
-			// $("#gameLogo").attr("src", "img/game/ltc7/" + t[7] + ".png");
 			$("#gameLogo").show();
 		case "rr":
 			$(".text").css("color", "#000");
@@ -209,14 +223,10 @@ function setEventCss(t) {
 
 function renderAndSave() {
 	html2canvas(document.getElementById("thumbnail"), {
-	  onrendered: function(canvas) {
-		var img = canvas.toDataURL("image/png");
-
-		Canvas2Image.saveAsPNG(canvas, 888, 500);
-	
-		// $('#link-download').attr("href", img);
-		// $('#link-download').attr("download", token[2] + ' ' + 'vs' + ' ' + token[4] + ' ' + token[6]);
-	  }
+		onrendered: function(canvas) {
+			var img = canvas.toDataURL("image/png");
+			Canvas2Image.saveAsPNG(canvas, 888, 500);
+		}
 	});
 }
 
