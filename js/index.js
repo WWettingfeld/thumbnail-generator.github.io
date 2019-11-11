@@ -1,4 +1,4 @@
-// MNM:209:hamyojo:Sheik:Arsenals:Fox:Winners:Melee
+// mnm:209:hamyojo:Sheik:Arsenals:Fox:Winners:ssbm
 
 function createThumbnails() {
 	var matches = getMatches();
@@ -150,6 +150,13 @@ function setEventCss(match) {
 			});
 			break;
 		case "kitx":
+			$("#bracket").css({
+				"top": "271px",
+				"left": "50%",
+				"font-size": "30px",
+				"text-align": "center",
+				"margin-left": "-150px"
+			});
 		case "fmirl":
 		case "irl":
 			$("#bracket").css({
@@ -159,6 +166,7 @@ function setEventCss(match) {
 				"text-align": "center",
 				"margin-left": "-150px"
 			});
+			$(".text").css("color", "#ffffff");
 			break;
 		case "xdl":
 			$("#bracket").css("top", "218px");
