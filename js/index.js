@@ -166,7 +166,6 @@ function setEventCss(match) {
 				"text-align": "center",
 				"margin-left": "-150px"
 			});
-			$(".text").css("color", "#ffffff");
 			break;
 		case "xdl":
 			$("#bracket").css("top", "218px");
@@ -175,7 +174,6 @@ function setEventCss(match) {
 			break;
 		case "usw":
 		case "ultimatum":
-			//$("#bracket").css("top", "216px");
 			$(".text").css("color", "#fff");
 			$("#gameLogo").show();
 			break;
