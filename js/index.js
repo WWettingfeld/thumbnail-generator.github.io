@@ -203,6 +203,7 @@ function setEventCss(match) {
 		case "ltc":
 			$(".text").css("font-style", "bold");
 			$("#gameLogo").show();
+			break;
 		case "rr":
 			$(".text").css("color", "#000");
 			$("#bracket").css({
@@ -222,6 +223,26 @@ function setEventCss(match) {
     			"margin-left": "0"
 			});
 			$("#number").hide();
+			break;
+		case "cinema":
+			$("#bracket").css({
+				"top": "-19px",
+				"left": "332px",
+				"font-size": "18px",
+				"text-align": "center",
+				"color": "#fc2f8e",
+				"font-weight": "600"
+			});
+			$("#thumbnail").css({
+				"font-family": "'Jost*'",
+				"font-weight": "600"
+			});
+			$(".name").css({
+				"line-height": "60px",
+				"font-weight": "600"
+			});
+			$("#number").hide();
+			$("#gameLogo").hide();
 			break;
 		default:
 			$("#number").show();
